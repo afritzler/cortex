@@ -34,6 +34,9 @@ func GetFirstAddressOf(names []string) (string, error) {
 				if ip := v.IP.To4(); ip != nil {
 					return v.IP.String(), nil
 				}
+				if ip := v.IP.To16(); ip != nil {
+					return v.IP.String(), nil
+				}
 			}
 		}
 	}
